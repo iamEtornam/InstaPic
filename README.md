@@ -14,6 +14,8 @@ InstaPic UI was designed by [**Mickael Guillaume**](https://dribbble.com/mickael
 
 ## Art 🤩🤩🤩
 
+<img align="center" width="100%" height="400" src="https://raw.githubusercontent.com/RegNex/shopping_app_ui/master/screenshot/original.png"/>
+
 <table style="width:100%" bgcolor="black">
 </br>
   <tr>
