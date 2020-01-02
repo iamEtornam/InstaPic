@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:insta_pic/view_post_page.dart';
 
+import 'helper_widgets/postAction_row_widget.dart';
 import 'helper_widgets/profile_row_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -75,7 +77,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
-          buildPostContainerMain()
+          buildPostContainerMain(context)
         ],
       ),
       bottomNavigationBar: Stack(
@@ -136,7 +138,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Padding buildPostContainerMain() {
+  Padding buildPostContainerMain(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 10, 24, 10),
       child: Column(
@@ -151,61 +153,34 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Container(
-            height: 300,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                image: DecorationImage(
-                    image: ExactAssetImage('assets/images/light_house.jpg'),
-                    fit: BoxFit.cover)),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ViewPostPage()),
+              );
+            },
+            child: Container(
+              height: 300,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  image: DecorationImage(
+                      image: ExactAssetImage('assets/images/light_house.jpg'),
+                      fit: BoxFit.cover)),
+            ),
           ),
           SizedBox(
             height: 10,
           ),
-          buildPostActionRow()
+          PostActionRowWidget()
         ],
       ),
     );
   }
 
-  Row buildPostActionRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            postHelpersRow(Icons.favorite_border, '234'),
-            SizedBox(width: 10),
-            postHelpersRow(EvilIcons.comment, '109')
-          ],
-        ),
-        IconButton(
-            icon: Icon(
-              Feather.bookmark,
-              size: 35,
-            ),
-            onPressed: null),
-      ],
-    );
-  }
 
-  Row postHelpersRow(IconData icon, String count) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        IconButton(
-            icon: Icon(
-              icon,
-              size: 35,
-            ),
-            onPressed: null),
-        Text(
-          count,
-          style: TextStyle(fontSize: 18),
-        )
-      ],
-    );
-  }
+
+  
 
   Container buildStatusContainer(String imagePath, bool isViewed) {
     return Container(
