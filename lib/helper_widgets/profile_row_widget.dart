@@ -10,14 +10,17 @@ class ProfileRowWidget extends StatelessWidget {
     return Row(
       children: <Widget>[
         CircleAvatar(
-          radius: 25,
+          radius: 20,
           backgroundImage: ExactAssetImage('assets/images/person_4.jpg'),
         ),
         SizedBox(
           width: 15,
         ),
         Text('Emillie Porcinet',
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18))
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18,color: Colors.black)),
+              SizedBox(
+          width: 15,
+        ),
       ],
     );
   }
