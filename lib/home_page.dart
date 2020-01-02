@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size.width / 2 - 35;
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -75,45 +76,61 @@ class HomePage extends StatelessWidget {
           buildPostContainerMain()
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          selectedIconTheme: IconThemeData(color: Colors.white),
-          selectedItemColor: Colors.white,
-          unselectedIconTheme: IconThemeData(color:Colors.grey),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: [
-            BottomNavigationBarItem(
-                backgroundColor: Color.fromRGBO(30, 36, 57, 1),
-                icon: Icon(
-                  SimpleLineIcons.home,
-                ),
-                title: Text('Home')),
-            BottomNavigationBarItem(
-                backgroundColor: Color.fromRGBO(30, 36, 57, 1),
-                icon: Icon(
-                  Icons.search,
-                ),
-                title: Text('Search')),
-            BottomNavigationBarItem(
-                backgroundColor: Color.fromRGBO(30, 36, 57, 1),
-                icon: Icon(
-                  Icons.favorite_border,
-                ),
-                title: Text('Likes')),
-            BottomNavigationBarItem(
-                backgroundColor: Color.fromRGBO(30, 36, 57, 1),
-                icon: Icon(
-                  SimpleLineIcons.people,
-                ),
-                title: Text('Profile')),
-          ]),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        backgroundColor: Colors.white,
-        child: Icon(Feather.camera, color: Colors.red),
+      bottomNavigationBar: Stack(
+        children: <Widget>[
+          Container(
+            height: 90,
+            color: Color.fromRGBO(30, 36, 57, 1),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      SimpleLineIcons.home,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    onPressed: null),
+                IconButton(
+                    icon: Icon(
+                      Icons.search,
+                      size: 30,
+                      color: Colors.grey,
+                    ),
+                    onPressed: null),
+                SizedBox(height: 45, width: 45),
+                IconButton(
+                    icon: Icon(
+                      Icons.favorite_border,
+                      size: 30,
+                      color: Colors.grey,
+                    ),
+                    onPressed: null),
+                IconButton(
+                    icon: Icon(
+                      SimpleLineIcons.people,
+                      size: 30,
+                      color: Colors.grey,
+                    ),
+                    onPressed: null)
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            left: size,
+            child: Material(
+              elevation: 4,
+              borderRadius: BorderRadius.circular(90),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child:
+                    Icon(SimpleLineIcons.camera, size: 35, color: Colors.red),
+              ),
+            ),
+          ),
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
