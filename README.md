@@ -19,7 +19,7 @@ InstaPic UI was designed by [**Mickael Guillaume**](https://dribbble.com/mickael
 <table style="width:100%" bgcolor="black">
 </br>
   <tr>
-    <td><img align="left" src="https://raw.githubusercontent.com/RegNex/InstaPic/master/screenshot/art_1.jpg" width="200" height="400"/></td>
+    <td><img align="left" src="https://raw.githubusercontent.com/RegNex/InstaPic/master/screenshot/art_1.png" width="200" height="400"/></td>
     <td><img src="https://raw.githubusercontent.com/RegNex/InstaPic/master/screenshot/art_2.png" width="200" height="400"/></td>
    
   </tr>
