@@ -11,7 +11,11 @@ class MyApp extends StatelessWidget {
       title: 'InstaPic',
       theme: ThemeData(
         brightness: Brightness.light,
-        appBarTheme: AppBarTheme(elevation: 0,color: Colors.white,iconTheme: IconThemeData(color:Colors.black)),
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          brightness: Brightness.light,
+          color: Colors.white,
+          iconTheme: IconThemeData(color:Colors.black)),
         scaffoldBackgroundColor: Colors.white,
       ),
       home: HomePage(),
