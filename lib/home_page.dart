@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
+import 'helper_widgets/profile_row_widget.dart';
+
 class HomePage extends StatelessWidget {
-  final images = [
+  final statusData = [
     ['assets/images/person_1.jpg', false],
     ['assets/images/person_2.jpg', false],
     ['assets/images/person_3.jpg', true],
@@ -59,10 +61,10 @@ class HomePage extends StatelessWidget {
             height: 100,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: images.length,
+                itemCount: statusData.length,
                 itemBuilder: (BuildContext context, int index) {
                   return buildStatusContainer(
-                      images[index][0], images[index][1]);
+                      statusData[index][0], statusData[index][1]);
                 }),
           ),
           SizedBox(height: 10),
@@ -142,7 +144,7 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              buildProfileRow(),
+              ProfileRowWidget(),
               IconButton(icon: Icon(Icons.more_horiz), onPressed: null)
             ],
           ),
@@ -201,22 +203,6 @@ class HomePage extends StatelessWidget {
           count,
           style: TextStyle(fontSize: 18),
         )
-      ],
-    );
-  }
-
-  Row buildProfileRow() {
-    return Row(
-      children: <Widget>[
-        CircleAvatar(
-          radius: 25,
-          backgroundImage: ExactAssetImage('assets/images/person_4.jpg'),
-        ),
-        SizedBox(
-          width: 15,
-        ),
-        Text('Emillie Porcinet',
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18))
       ],
     );
   }
