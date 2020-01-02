@@ -24,8 +24,8 @@ InstaPic UI was designed by [**Mickael Guillaume**](https://dribbble.com/mickael
    
   </tr>
   <tr>
-   <td><p>Original</p></td>
-      <td><p>Implementation</p></td>
+   <td><p>Page One</p></td>
+      <td><p>Page Two</p></td>
   </tr>
   </br>  
 
